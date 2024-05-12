@@ -1,0 +1,80 @@
+# theme = "default"
+theme = "horizon-dark"
+# theme = "catppuccin_frappe"
+# theme = "noctis"
+# theme = "base16_transparent"
+# theme = "material_oceanic"
+# theme = "tokyonight_moon"
+# theme = "tokyonight"
+# theme = "ttox"
+# theme = "solarized_dark"
+# theme = "monokai_pro_machine"
+
+[editor]
+mouse = false
+undercurl = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.lsp]
+snippets = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator","version-control"]
+right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+
+[editor.file-picker]
+hidden = false
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = "|"  # set wrap-indicator to "" to hide it
+
+[keys.normal]
+"*" = ["search_selection", "search"]
+y = ["yank_main_selection_to_clipboard"]
+p = ["paste_clipboard_before"]
+esc = ["insert_mode"]
+tab = [":bnext"]
+S-tab = [":bprev"]
+A-q = [":q"]
+A-s = [":w"]
+A-w = [":bc"]
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-space = ["code_action"]
+A-S-right = ["extend_line"]
+A-z = ["undo"]
+S-A-Z = ["redo"]
+"A-/" = ["toggle_comments"]
+S-up = ["jump_view_up"]
+S-down = ["jump_view_down"]
+S-left = ["jump_view_left"]
+S-right = ["jump_view_right"]
+
+C-o = [":hnew",":config-open"]
+C-g = [":new", ":insert-output lazygit", ":bc!", ":redraw"]
+C-f = [":new", ":insert-output lf", ":bc!", ":redraw"]
+C-n = [":vnew", ":set-language markdown"]
+C-b = [
+  ":wbc! /Users/xander/vault/personal/scratch.md", 
+  ":sh /Users/xander/vault/personal/build_note",
+  ":bc"
+]
+
+[keys.normal."space"]
+"/" = ["search_selection", "global_search"]
+# c = ":bc"
+# o = "file_picker_in_current_buffer_directory"
+# g = ":sh helix-commands git $(helix-commands getfileinfo)"
+# e = ":sh helix-commands explorer $(helix-commands getfileinfo)"
+# B = ":sh helix-commands blame $(helix-commands getfileinfo)"
+# r = ":pipe helix-commands getfileinfo"
+# x = ":sh helix-commands copy $(helix-commands getfileinfo | awk \"{ print \\$1 }\")"
+
+[keys.select]
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]

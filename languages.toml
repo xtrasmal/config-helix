@@ -1,0 +1,62 @@
+[[language]]
+name = "elixir"
+scope = "source.elixir"
+file-types = ["ex", "exs", "heex"]
+roots = ["mix.exs", "mix.lock"]
+auto-format = true
+diagnostic-severity = "Hint"
+comment-token = "#"
+indent = {tab-width = 2, unit = " "}
+language-servers = ["nextls","elixir-ls","credo"]
+
+[language-server.elixir-ls]
+command = "elixir-ls"
+config = { elixirLS.dialyzerEnabled = true }
+
+[language-server.nextls]
+command = "nextls"
+args = ["--stdio=true"]
+
+[[language]]
+name = "php"
+auto-format = true
+language-servers = [ "phpactor" ]
+
+[language-server.phpactor]
+command = "phpactor"
+args = [ "language-server" ]
+
+[language.debugger]
+name = "vscode-php-debug"
+transport = "stdio"
+command = "node"
+args = ["/Users/xander/.vscode/extensions/xdebug.php-debug-1.34.0/out/phpDebug.js"]
+
+[[language.debugger.templates]]
+name = "Listen for Xdebug"
+request = "launch"
+completion = ["ignored"]
+args = {serverSourceRoot="/Users/xander/Sites/devops/shares/aio/code/core-api",localSourceRoot="/var/www/code/core-api"}
+
+[[language]]
+name = "html"
+language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "jsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "tailwindcss-ls"]
+
+[language-server.tailwindcss-ls]
+config = { userLanguages = { rust = "html", "*.rs" = "html" } }
