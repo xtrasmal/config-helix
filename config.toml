@@ -58,7 +58,10 @@ S-right = ["jump_view_right"]
 C-o = [":hnew",":config-open"]
 C-g = [":new", ":insert-output lazygit", ":bc!", ":redraw"]
 # C-f = [":new", ":insert-output lf", ":bc!", ":redraw"]
-C-f = ["normal_mode",":sh zellij run -f -x 10% -y 10% --width 80% --height 80% -- zsh ~/.config/helix/scripts/picker_yazi"]
+C-f = [
+  "normal_mode",
+  ":sh zellij run -f -x 10% -y 10% --width 80% --height 80% --name 'Filesystem' -- zsh ~/.config/helix/scripts/picker_yazi"
+]
 
 
 
